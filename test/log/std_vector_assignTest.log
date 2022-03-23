@@ -1,0 +1,20 @@
+-- [Assign] --
+
+int: 
+assigne(42, 1): 
+size: 42
+maxSize: 4611686018427387903
+Capacity: 42
+
+custom: 
+vecCustom: custom
+size: 6
+maxSize: 576460752303423487
+Capacity: 6
+
+assign(it, ite): 
+vecCustom2: custom
+size: 6
+maxSize: 576460752303423487
+Capacity: 6
+

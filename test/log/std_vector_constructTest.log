@@ -1,0 +1,39 @@
+-- [Constructor] --
+
+empty test: int:
+size: 0
+maxSize: 4611686018427387903
+Capacity: 0
+
+empty test: Custom Class:
+size: 0
+maxSize: 576460752303423487
+Capacity: 0
+
+fill test: int:
+size: 42
+maxSize: 4611686018427387903
+Capacity: 42
+
+range test: int:
+size: 42
+maxSize: 4611686018427387903
+Capacity: 42
+
+range test2: Custom:
+size: 8
+maxSize: 576460752303423487
+Capacity: 8
+
+
+copy test: Custom:
+size: 8
+maxSize: 576460752303423487
+Capacity: 8
+
+
+operator= test: Custom:
+size: 0
+maxSize: 576460752303423487
+Capacity: 0
+

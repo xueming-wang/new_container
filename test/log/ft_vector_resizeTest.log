@@ -1,0 +1,58 @@
+-- [resize/reserve] --
+
+int: size: 0
+maxSize: 4611686018427387903
+Capacity: 0
+
+add 1: size: 1
+maxSize: 4611686018427387903
+Capacity: 1
+
+resize(42): size: 42
+maxSize: 4611686018427387903
+Capacity: 42
+
+resize(0): size: 0
+maxSize: 4611686018427387903
+Capacity: 0
+
+reserve(42): size: 0
+maxSize: 4611686018427387903
+Capacity: 0
+
+add 0 -> 42: size: 43
+maxSize: 4611686018427387903
+Capacity: 43
+
+reserve(0): size: 43
+maxSize: 4611686018427387903
+Capacity: 43
+
+Custom: size: 0
+maxSize: 576460752303423487
+Capacity: 0
+
+add 1: size: 1
+maxSize: 576460752303423487
+Capacity: 1
+
+resize(42): size: 42
+maxSize: 576460752303423487
+Capacity: 42
+
+resize(0): size: 0
+maxSize: 576460752303423487
+Capacity: 0
+
+reserve(42): size: 0
+maxSize: 576460752303423487
+Capacity: 0
+
+add 0 -> 42: size: 43
+maxSize: 576460752303423487
+Capacity: 43
+
+reserve(0): size: 43
+maxSize: 576460752303423487
+Capacity: 43
+

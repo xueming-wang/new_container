@@ -1,0 +1,19 @@
+-- [count] --
+
++ a 101
++ c 202
++ f 303
+show content:
+a => 101
+c => 202
+f => 303
+size: 3
+
+check element with a loop a -> h:
+a is an element of m1.
+b is not an element of m1.
+c is an element of m1.
+d is not an element of m1.
+e is not an element of m1.
+f is an element of m1.
+g is not an element of m1.

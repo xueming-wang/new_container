@@ -1,0 +1,35 @@
+-- [insert] --
+
+custom: 
+vecCustom: + c u s o m: cusom
+size: 5
+maxSize: 576460752303423487
+Capacity: 5
+
+insert 't' in 'cusom': single: custom
+size: 6
+maxSize: 576460752303423487
+Capacity: 6
+
+int: 
+VecInt: + 1 42: 
+1 42
+size: 2
+maxSize: 4611686018427387903
+Capacity: 2
+
+insert 40 * 42 in '1 42': fill: 1 41 41 41 41 41 41 41 41 41 41 41 41 41 41 41 41 41 41 41 41 41 41 41 41 41 41 41 41 41 41 41 41 41 41 41 41 41 41 41 41 42
+size: 42
+maxSize: 4611686018427387903
+Capacity: 42
+
+inset '1 [41 41 41 ... 41 41 41] 42' in vecInt2: range:  
+size: 0
+maxSize: 4611686018427387903
+Capacity: 0
+
+41 41 41 41 41 41 41 41 41 41 41 41 41 41 41 41 41 41 41 41 41 41 41 41 41 41 41 41 41 41 41 41 41 41 41 41 41 41 41 41
+size: 40
+maxSize: 4611686018427387903
+Capacity: 40
+

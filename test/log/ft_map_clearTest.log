@@ -1,0 +1,23 @@
+-- [clear] --
+
++ x 100
++ y 200
++ z 300
+show content:
+x => 100
+y => 200
+z => 300
+size: 3
+
+m1 clear:
+show content:
+m1 is empty
+size: 0
+
++ a 1101
++ b 2202
+show content:
+a => 1101
+b => 2202
+size: 2
+

@@ -1,0 +1,14 @@
+-- [equalRange] --
+
++ a 10
++ b 20
++ c 30
+show content:
+a => 10
+b => 20
+c => 30
+size: 3
+
+set equal_range('b')
+lower bound points to: b => 20
+upper bound points to: c => 30

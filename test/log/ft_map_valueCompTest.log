@@ -1,0 +1,16 @@
+-- [valueComp] --
+
++ x 1001
++ y 2002
++ z 3003
+show content:
+x => 1001
+y => 2002
+z => 3003
+size: 3
+
+show content with comp:
+x => 1001
+y => 2002
+z => 3003
+

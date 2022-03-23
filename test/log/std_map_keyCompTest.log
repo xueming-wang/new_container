@@ -1,0 +1,16 @@
+-- [keyComp] --
+
++ a 100
++ b 200
++ c 300
+show content:
+a => 100
+b => 200
+c => 300
+size: 3
+
+show content with comp:
+a => 100
+b => 200
+c => 300
+

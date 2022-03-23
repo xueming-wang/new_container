@@ -1,0 +1,31 @@
+-- [swap] --
+
+map<char, int>
+m1 + x 100
+m1 + y 200
+show content:
+x => 100
+y => 200
+size: 2
+
+m2 + a 11
+m2 + b 22
+m2 + c 33
+show content:
+a => 11
+b => 22
+c => 33
+size: 3
+
+swap m1 and m2
+show content:
+a => 11
+b => 22
+c => 33
+size: 3
+
+show content:
+x => 100
+y => 200
+size: 2
+

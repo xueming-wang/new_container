@@ -1,0 +1,16 @@
+-- [Empty] --
+
+map<char, int>
+m1 is empty
+size: 0
+
+map<char, int> + 1: m1 is not empty
+size: 1
+
+map<char, Custom>
+m1 is empty
+size: 0
+
+map<char, Custom> + 1: m1 is not empty
+size: 1
+

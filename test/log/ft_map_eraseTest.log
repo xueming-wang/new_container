@@ -1,0 +1,33 @@
+-- [erase] --
+
+map<char, int>
++ a 100
++ b 200
++ c 300
++ d 400
+size: 4
+
+show content:
+a: 100
+b: 200
+c: 300
+d: 400
+
+erase by key: 'b'
+size: 3
+
+show content:
+a: 100
+c: 300
+d: 400
+
+erase by position: 'begin'
+size: 2
+
+show content:
+c: 300
+d: 400
+
+erase by range: begin -> end
+show content:
+m1 is empty

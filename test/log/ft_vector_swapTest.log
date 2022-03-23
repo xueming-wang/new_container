@@ -1,0 +1,44 @@
+-- [swap] --
+
+int1: + 0 -> 42: 0 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30 31 32 33 34 35 36 37 38 39 40 41 42
+size: 43
+maxSize: 4611686018427387903
+Capacity: 43
+
+int2: + 0 -> 12: 0 1 2 3 4 5 6 7 8 9 10 11 12
+size: 13
+maxSize: 4611686018427387903
+Capacity: 13
+
+swap int1 <-> int2:
+int1: 0 1 2 3 4 5 6 7 8 9 10 11 12
+size: 13
+maxSize: 4611686018427387903
+Capacity: 13
+
+int2: 0 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30 31 32 33 34 35 36 37 38 39 40 41 42
+size: 43
+maxSize: 4611686018427387903
+Capacity: 43
+
+Custom1: + c u s t o m: custom
+size: 6
+maxSize: 576460752303423487
+Capacity: 6
+
+Custom2: + n o t h i n g: nothing
+size: 7
+maxSize: 576460752303423487
+Capacity: 7
+
+swap Custom1 <-> Custom2:
+Custom1: nothing
+size: 7
+maxSize: 576460752303423487
+Capacity: 7
+
+Custom2: custom
+size: 6
+maxSize: 576460752303423487
+Capacity: 6
+
