@@ -6,11 +6,12 @@
 /*   By: xuwang <xuwang@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/18 17:14:16 by xuwang            #+#    #+#             */
-/*   Updated: 2022/03/23 17:53:15 by xuwang           ###   ########.fr       */
+/*   Updated: 2022/03/29 16:59:24 by xuwang           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "stack.hpp"
+#include "../stack.hpp"
+#include <stack>
 #include <vector>
 
 void printstr(std::string string) {

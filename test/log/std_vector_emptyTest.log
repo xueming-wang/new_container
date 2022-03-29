@@ -1,7 +1,0 @@
--- [Empty] --
-
-int: init: vecInt is empty
-add 1: vecInt is not empty
-
-Custom: init: vecCustom is empty
-add 1: vecCustom is not empty

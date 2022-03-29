@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Stack.hpp                                          :+:      :+:    :+:   */
+/*   stack.hpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: xuwang <xuwang@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/04 16:20:50 by xuwang            #+#    #+#             */
-/*   Updated: 2022/03/23 18:02:13 by xuwang           ###   ########.fr       */
+/*   Updated: 2022/03/29 16:30:21 by xuwang           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,10 +16,10 @@
 
 //Your stack will use your vector class as the underlying container by default
 #include "vector.hpp"
-#include <stack>
+
 namespace ft
 {
-    template <class T, class Container = vector<T> > 
+    template <class T, class Container = ft::vector<T> > 
     class stack {
         public:
             typedef T                                   value_type;

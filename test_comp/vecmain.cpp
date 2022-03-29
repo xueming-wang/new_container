@@ -6,7 +6,7 @@
 /*   By: xuwang <xuwang@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/06 16:17:49 by xuwang            #+#    #+#             */
-/*   Updated: 2022/03/23 17:53:01 by xuwang           ###   ########.fr       */
+/*   Updated: 2022/03/29 17:00:41 by xuwang           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@
 #include <iostream>
 #include <iterator>
 #include <memory>
-#include "vector.hpp"
+#include "../vector.hpp"
 
 void printstr(std::string string) {
   std::cout << string << std::endl;
@@ -92,8 +92,8 @@ void constructor_test(void){
   printmyvec(myfifth);
   myfirst = mysecond;
   std::cout << "test opearator " << std::endl;
-  std::cout << "first vector: ";
-  printrealvec(first);
+  std::cout << "myfirst vector: ";
+  printmyvec(myfirst);
   std::cout << std::endl;
   
 }
