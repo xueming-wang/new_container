@@ -6,7 +6,7 @@
 /*   By: xuwang <xuwang@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/05 16:44:30 by xuwang            #+#    #+#             */
-/*   Updated: 2022/03/23 18:33:31 by xuwang           ###   ########.fr       */
+/*   Updated: 2022/03/29 17:58:21 by xuwang           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,7 +49,6 @@ struct enable_if{};
 template<class T> 
 struct enable_if<true, T> { typedef T type; };
 
-
 /* class template: is_integral*/
 /*Trait class that identifies whether T is an integral type.*/
 /*fundamental integral types
@@ -59,7 +58,7 @@ unsigned int, unsigned long int, unsigned long long int */
 /*Inherited from integral_constant*/
 template <class T> struct is_integral : public false_type{};
 template<> struct is_integral<bool>: public true_type{};
-template<> struct is_integral<char>: public true_type{};
+template<> struct is_integral<char>: public true_type{}; 
 template<> struct is_integral<wchar_t>: public true_type{};
 template<> struct is_integral<signed char>: public true_type{};
 template<> struct is_integral<short int>: public true_type{};
@@ -212,29 +211,6 @@ template <class Arg1, class Arg2, class Result>
     typedef Arg2 second_argument_type;
     typedef Result result_type;
   };
-
-  
-struct  nullptr_t {
-  void *_ptr;
-
-  struct __nat { int __for_bool_; };
-
-  nullptr_t() : _ptr(0) {}
-  nullptr_t(int __nat::*) : _ptr(0) {}
-
-  operator int __nat::*() const { return 0; }
-
-  template <class _T>
-  operator _T* () const {return 0;}
-
-  template <class _T, class _U>
-  operator _T _U::* () const {return 0;}
-
-  friend  bool operator==(nullptr_t, nullptr_t) { return true; }
-  friend  bool operator!=(nullptr_t, nullptr_t) { return false; }
-};
-
-	#define ft_nullptr nullptr_t(0)
 
   
 

@@ -1,7 +1,7 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   realmain.cpp                                       :+:      :+:    :+:   */
+/*   main.cpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: xuwang <xuwang@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
@@ -22,43 +22,43 @@ void printstr(std::string string) {
 }
 
 template<class T>
-void print_realsize(std::vector<T> realvec)
+void print_size(std::vector<T> vec)
 {
-  std::cout << "size: " << realvec.size() << std::endl;
-  std::cout << "max_size: " << realvec.max_size() << std::endl;
-  std::cout << "capacity: " << realvec.capacity() << std::endl;
+  std::cout << "size: " << vec.size() << std::endl;
+  std::cout << "max_size: " << vec.max_size() << std::endl;
+  std::cout << "capacity: " << vec.capacity() << std::endl;
 }
 
 template<class T>
-void  printrealvec(std::vector<T> realvec)
+void  printvec(std::vector<T> vec)
 {
-  for (typename std::vector<T>::iterator it = realvec.begin(); it != realvec.end(); ++it)
+  for (typename std::vector<T>::iterator it = vec.begin(); it != vec.end(); ++it)
      std::cout << *it << ' ';
   std::cout << "\n";
 }
 
 template < class Key, class T>
-void  printrealmap(std::string string, std::map<Key, T> realmap) {
+void  printmap(std::string string, std::map<Key, T> map) {
    std::cout << string << std::endl;
-   for (typename std::map<Key, T>::iterator it = realmap.begin(); it != realmap.end(); ++it)
+   for (typename std::map<Key, T>::iterator it = map.begin(); it != map.end(); ++it)
       std::cout << it->first << " => " << it->second << std::endl;
 }
 
 template < class Key, class T>
-void  printrealmap_val(std::string string, std::map<Key, T> realmap)
+void  printmap_val(std::string string, std::map<Key, T> map)
 {
       std::cout << string;
-  for (typename std::map<Key, T>::iterator it = realmap.begin(); it != realmap.end(); ++it)
+  for (typename std::map<Key, T>::iterator it = map.begin(); it != map.end(); ++it)
       std::cout << it->second << ' ';
   std::cout << "\n";
 }
 
 template < class Key, class T>
-void  printrealmap_key(std::string string, std::map<Key, T> realmap)
+void  printmap_key(std::string string, std::map<Key, T> map)
 {
   
   std::cout << string;
-  for (typename std::map<Key, T>::iterator it = realmap.begin(); it != realmap.end(); ++it)
+  for (typename std::map<Key, T>::iterator it = map.begin(); it != map.end(); ++it)
       std::cout << it->first << ' ';
   std::cout << "\n";
 }
@@ -66,22 +66,22 @@ void  printrealmap_key(std::string string, std::map<Key, T> realmap)
 void vec_constructor_test(void){
  
   printstr("---------Test constructor-----------\n");
-  printstr("[real vector info]");
+  printstr("[ vector info]");
   std::vector<int> first(4);                                // empty vector of ints
   std::vector<int> second(4, 42);                       // four ints with value 100
   std::vector<int> third (second.begin(),second.end());  // iterating through second
   std::vector<int> fourth (third);
   int ints[] = {0,-42,42,1,442}; 
   std::vector<int> fifth (ints,ints + sizeof(ints) / sizeof(int));
-  printrealvec(first);
-  printrealvec(second);
-  printrealvec(third);
-  printrealvec(fourth);
-  printrealvec(fifth);
+  printvec(first);
+  printvec(second);
+  printvec(third);
+  printvec(fourth);
+  printvec(fifth);
   first = second;
   std::cout << "test opearator " << std::endl;
   std::cout << "first vector: ";
-  printrealvec(first);
+  printvec(first);
   std::cout << std::endl;
 }
 
@@ -91,14 +91,14 @@ void vec_constructor_test(void){
 void vec_iterator_test(void)
 {
   printstr("---------Test iterator-----------\n");
-  printstr("[real vector info]");
-  std::vector<int> realvec;
+  printstr("[ vector info]");
+  std::vector<int> vec;
   for(int i = 1; i < 6; i++)
-    realvec.push_back(i);
-  printrealvec(realvec);
-  std::vector<int>::iterator it = realvec.begin();
+    vec.push_back(i);
+  printvec(vec);
+  std::vector<int>::iterator it = vec.begin();
   std::cout << "iterator begin(it) is: "<< *it << std::endl;
-  std::vector<int>::iterator ite = realvec.end();
+  std::vector<int>::iterator ite = vec.end();
   std::cout << "iterator end(ite) is: "<< *(ite - 1) << std::endl;
   it++;
   std::cout << "begin++(it++) is: "<< *it << std::endl;
@@ -109,19 +109,19 @@ void vec_iterator_test(void)
   ite -= 1;
   std::cout << "ite - 1  is: "<< *(ite - 1) << std::endl;
   
-  std::vector<int>::const_iterator cit = realvec.begin();
+  std::vector<int>::const_iterator cit = vec.begin();
   std::cout << "const_iterator begin is: " << *cit << std::endl;
-  std::vector<int>::const_iterator cite = realvec.end();
+  std::vector<int>::const_iterator cite = vec.end();
   std::cout << "const_iterator end is: " <<*(cite - 1) << std::endl;
   
-  std::vector<int>::reverse_iterator rit = realvec.rbegin();
+  std::vector<int>::reverse_iterator rit = vec.rbegin();
   std::cout << "reverse_iterator rbegin is: " << *rit << std::endl;
-  std::vector<int>::reverse_iterator rite = realvec.rend();
+  std::vector<int>::reverse_iterator rite = vec.rend();
   std::cout <<  "reverse_iterator rend is: " << *(rite - 1) << std::endl;
   
-  std::vector<int>::const_reverse_iterator crit = realvec.rbegin();
+  std::vector<int>::const_reverse_iterator crit = vec.rbegin();
   std::cout << "const_reverse_iterator rbegin is: " << *crit << std::endl;
-  std::vector<int>::const_reverse_iterator crite = realvec.rend();
+  std::vector<int>::const_reverse_iterator crite = vec.rend();
   std::cout << "const_rend is: " << *(crite - 1) << std::endl << std::endl;
   
 }
@@ -131,20 +131,20 @@ void vec_iterator_test(void)
 void vec_size_test()
 {
   printstr("---------Test size/max_size/empty/capatity-----------\n");
-  printstr("[real vector info]");
-  std::vector<int> realvec;
-  std::cout << "int: " << (realvec.empty() == true ? "realvec is empty" : "realvec is not empt" )<< std::endl;
-  realvec.push_back(1);
-  std::cout << "int: " << (realvec.empty() == true ? "realvec is empty" : "realvec is not empt" )<< std::endl;
-  print_realsize(realvec);
+  printstr("[ vector info]");
+  std::vector<int> vec;
+  std::cout << "int: " << (vec.empty() == true ? "vec is empty" : "vec is not empt" )<< std::endl;
+  vec.push_back(1);
+  std::cout << "int: " << (vec.empty() == true ? "vec is empty" : "vec is not empt" )<< std::endl;
+  print_size(vec);
   std::cout << std::endl;
-  std::vector<char> realvecchar;
-  std::cout << "char: " << (realvecchar.empty() == true ? "realvecchar is empty" : "realvechar is not empt" )<< std::endl;
-  realvecchar.push_back('a');
-  realvecchar.push_back('b');
-  std::cout << "char: " << (realvecchar.empty() == true ? "realvecchar is empty" : "realvechar is not empt" )<< std::endl;
-  printrealvec(realvecchar);
-  print_realsize(realvecchar);
+  std::vector<char> vecchar;
+  std::cout << "char: " << (vecchar.empty() == true ? "vecchar is empty" : "vechar is not empt" )<< std::endl;
+  vecchar.push_back('a');
+  vecchar.push_back('b');
+  std::cout << "char: " << (vecchar.empty() == true ? "vecchar is empty" : "vechar is not empt" )<< std::endl;
+  printvec(vecchar);
+  print_size(vecchar);
   std::cout << std::endl;
   
 }
@@ -154,18 +154,18 @@ void vec_size_test()
 void vec_resize_test()
 {
   printstr("---------Test resize / reserve-----------\n");
-  printstr("[real vector info]");
-  std::vector<int> realvec;
-  realvec.push_back(42);
-  printrealvec(realvec);
-  realvec.resize(4, 1);
-  printrealvec(realvec);
-  realvec.resize(2);
-  printrealvec(realvec);
-  realvec.resize(4, 10);
-  printrealvec(realvec);
-  realvec.reserve(5);
-  print_realsize(realvec);
+  printstr("[ vector info]");
+  std::vector<int> vec;
+  vec.push_back(42);
+  printvec(vec);
+  vec.resize(4, 1);
+  printvec(vec);
+  vec.resize(2);
+  printvec(vec);
+  vec.resize(4, 10);
+  printvec(vec);
+  vec.reserve(5);
+  print_size(vec);
   std::cout << std::endl;
   
 }
@@ -175,16 +175,16 @@ void vec_resize_test()
 void vec_element_test()
 {
   printstr("---------Test Element acces(at , [], front. back-----------\n");
-  printstr("[real vector info]");
-  std::vector<int> realvec;
+  printstr("[ vector info]");
+  std::vector<int> vec;
   for(int i = 1; i <= 10; i++)
-    realvec.push_back(i);
-  printrealvec(realvec);
-  std::cout << "real at(0) is: " << realvec.at(0) << std::endl;
-  std::cout << "real operator[9] is: " << realvec[9] << std::endl;
-  std::cout << "real operator[10] is: " << realvec[10] << std::endl;
-  std::cout << "real front is: " << realvec.front() << std::endl;
-  std::cout << "real back is: " << realvec.back() << std::endl;
+    vec.push_back(i);
+  printvec(vec);
+  std::cout << "at(0) is: " << vec.at(0) << std::endl;
+  std::cout << "operator[9] is: " << vec[9] << std::endl;
+  std::cout << "operator[10] is: " << vec[10] << std::endl;
+  std::cout << "front is: " << vec.front() << std::endl;
+  std::cout << "back is: " << vec.back() << std::endl;
   std::cout << std::endl;
   
 }
@@ -194,19 +194,19 @@ void vec_element_test()
 void vec_assign_test()
 {
   printstr("---------Test  assign-----------\n");
-  printstr("[real vector info]");
+  printstr("[ vector info]");
   std::vector<int> first;
   std::vector<int> second;
   std::vector<int> third;
   first.assign (7,100);             // 7 ints with a value of 100
-  printrealvec(first);
+  printvec(first);
   std::vector<int>::iterator it;
   it=first.begin() + 1;
   second.assign (it, first.end() - 1); // the 5 central values of first
-  printrealvec(second);
+  printvec(second);
   int ints[] = {1776,7,4};
   third.assign (ints,ints+3);   // assigning from array.
-  printrealvec(third);
+  printvec(third);
   std::cout << "Size of first: " << int (first.size()) << '\n';
   std::cout << "Size of second: " << int (second.size()) << '\n';
   std::cout << "Size of third: " << int (third.size()) << '\n';
@@ -219,26 +219,26 @@ void vec_assign_test()
 void vec_insert_test()
 {
   printstr("---------Test  insert-----------\n");
-  printstr("[real vector info]");
-  std::vector<int> realvector (3,100); //100 100 100
-  printrealvec(realvector);
+  printstr("[ vector info]");
+  std::vector<int> vector (3,100); //100 100 100
+  printvec(vector);
   
   std::vector<int>::iterator it;
-  it = realvector.begin();
-  it = realvector.insert (it , 200 ); // 200 100 100 100
-  printrealvec(realvector);
+  it = vector.begin();
+  it = vector.insert (it , 200 ); // 200 100 100 100
+  printvec(vector);
   // second insert
-  realvector.insert (it,2,300); //300 300 200 100 100 100 
-  printrealvec(realvector);
+  vector.insert (it,2,300); //300 300 200 100 100 100 
+  printvec(vector);
   // third insert with another vector
-  it = realvector.begin(); //it在第一位
+  it = vector.begin(); //it在第一位
   std::vector<int> anothervector (2,400);
-  realvector.insert (it+2,anothervector.begin(),anothervector.end()); //300 300 400 400 200 100 100 100 第三位插入两个400
-  printrealvec(realvector);
+  vector.insert (it+2,anothervector.begin(),anothervector.end()); //300 300 400 400 200 100 100 100 第三位插入两个400
+  printvec(vector);
   // fourth insert with a tab
-  int realarray [] = { 501,502,503 };
-  realvector.insert (realvector.begin(), realarray, realarray+3);  // 501 502 503 300 300 400 400 200 100 100 100begin位插入一个数组
-  printrealvec(realvector);
+  int array [] = { 501,502,503 };
+  vector.insert (vector.begin(), array, array+3);  // 501 502 503 300 300 400 400 200 100 100 100begin位插入一个数组
+  printvec(vector);
   std::cout << std::endl;
   
 }
@@ -248,13 +248,13 @@ void vec_insert_test()
 void vec_push_pop_test()
 {
   printstr("---------Test  push_back / pop_back -----------\n");
-  printstr("[real vector info]");
-  std::vector<std::string> realvec;
-  realvec.push_back("hello");
-  realvec.push_back("42");
-  printrealvec(realvec);
-  realvec.pop_back();
-  printrealvec(realvec);
+  printstr("[ vector info]");
+  std::vector<std::string> vec;
+  vec.push_back("hello");
+  vec.push_back("42");
+  printvec(vec);
+  vec.pop_back();
+  printvec(vec);
   std::cout << std::endl;
 
 }
@@ -264,16 +264,16 @@ void vec_push_pop_test()
 void vec_erase_test()
 {
   printstr("---------Test erase-----------\n");
-  printstr("[real vector info]");
-  std::vector<int> realvector;
-  for (int i=1; i<=10; i++) realvector.push_back(i);
-  printrealvec(realvector);
+  printstr("[ vector info]");
+  std::vector<int> vector;
+  for (int i=1; i<=10; i++) vector.push_back(i);
+  printvec(vector);
   // erase the 6th element
-  realvector.erase (realvector.begin()+5);
-  printrealvec(realvector);
+  vector.erase (vector.begin()+5);
+  printvec(vector);
   // erase the first 3 elements:
-  realvector.erase (realvector.begin(),realvector.begin()+3);
-  printrealvec(realvector);
+  vector.erase (vector.begin(),vector.begin()+3);
+  printvec(vector);
   std::cout << std::endl;
 
 }
@@ -283,16 +283,16 @@ void vec_erase_test()
 void vec_swap_clear_test()
 {
   printstr("---------Test swap / clear-----------\n");
-  printstr("[real vector info]");
+  printstr("[ vector info]");
   std::vector<int> foo (3,100);   // three ints with a value of 100
   std::vector<int> bar (5,200);   // five ints with a value of 200
   foo.swap(bar);
   std::cout << "foo contains:";
-  printrealvec(foo);
+  printvec(foo);
   std::cout << "bar contains:";
-  printrealvec(bar);
+  printvec(bar);
   foo.clear();
-  print_realsize(foo);
+  print_size(foo);
   std::cout << std::endl;
   
 }
@@ -302,31 +302,31 @@ void vec_swap_clear_test()
 void vec_overloads_test()
 {
   printstr("---------Test overloads-----------\n");
-  printstr("[real vector info]");
-  std::vector<int> realfoo (3,100);
-  std::cout << "realfoo vec is: ";
-  printrealvec(realfoo);
-  std::vector<int> realbar (5,200);
-  std::cout << "realbar vec is: ";
-  printrealvec(realbar);
+  printstr("[ vector info]");
+  std::vector<int> foo (3,100);
+  std::cout << "foo vec is: ";
+  printvec(foo);
+  std::vector<int> bar (5,200);
+  std::cout << "bar vec is: ";
+  printvec(bar);
   /* operator != */
-  if (realfoo != realbar) std::cout << "realfoo and realbar is not same" << std::endl;
+  if (foo != bar) std::cout << "foo and bar is not same" << std::endl;
    /* operator < */
-  if (realfoo < realbar) std::cout << "realfoo is smaller then realbar" << std::endl;
+  if (foo < bar) std::cout << "foo is smaller then bar" << std::endl;
   /* operator > */
-  if (realfoo > realbar) std::cout << "realfoo is biger then realbar" << std::endl;
+  if (foo > bar) std::cout << "foo is biger then bar" << std::endl;
   /*operator == , <= ,>= */
-  realfoo = realbar;
-  std::cout << "realfoo vec is: ";
-  printrealvec(realfoo);
-  if (realfoo == realbar) std::cout << "realfoo and realbar is same" << std::endl;
-  if (realfoo >= realbar) std::cout << "realfoo is biger or same then realbar" << std::endl;
-  if (realfoo <= realbar) std::cout << "realfoo is smaller or same then realbar" << std::endl << std::endl;
+  foo = bar;
+  std::cout << "foo vec is: ";
+  printvec(foo);
+  if (foo == bar) std::cout << "foo and bar is same" << std::endl;
+  if (foo >= bar) std::cout << "foo is biger or same then bar" << std::endl;
+  if (foo <= bar) std::cout << "foo is smaller or same then bar" << std::endl << std::endl;
   
 }
 
 
-void real_vector()
+void _vector()
 {
   vec_constructor_test();
   vec_iterator_test();
@@ -344,33 +344,33 @@ void real_vector()
 void map_constructor_test(void){
 
   printstr("---------Test constructor, destructor, operaror= ----------");
-  printstr("[real real info]");
+  printstr("[ info]");
   std::map<char,int> first;
-  printrealmap_val("map first val is: ", first);
-  printrealmap_key("map first key is: ", first);
+  printmap_val("map first val is: ", first);
+  printmap_key("map first key is: ", first);
   first['a']=42;
   first['b']=-42;
-  printrealmap_val("map first val is: ", first);
-  printrealmap_key("map first key is: ", first);
+  printmap_val("map first val is: ", first);
+  printmap_key("map first key is: ", first);
    /*test  with as many elements as the range [first,last)*/
   std::map<char,int> second (first.begin(),first.end());
-  printrealmap_val("map second val is: ", second);
-  printrealmap_key("map second key is: ", second);
+  printmap_val("map second val is: ", second);
+  printmap_key("map second key is: ", second);
   /*test copy*/
   std::map<char,int> third (second);
-  printrealmap_val("map third val is: ", third);
-  printrealmap_key("map third key is: ", third);
+  printmap_val("map third val is: ", third);
+  printmap_key("map third key is: ", third);
   /*test operator = */
   third['c'] = 0;
   first = third;
-  printrealmap_val("map first val is: ", first);
-  printrealmap_key("map first key is: ", first);
+  printmap_val("map first val is: ", first);
+  printmap_key("map first key is: ", first);
   std::cout << std::endl;
 }
 
 void map_iterator_test(){
   printstr("---------Test  iterator ----------");
-  printstr("[real map info]");
+  printstr("[ map info]");
   std::map<int,int> first;
   first[1] = 0;
   first[2] = 42;
@@ -399,7 +399,7 @@ void map_iterator_test(){
 void map_size_test(){
   
   printstr("---------Test size /empty-----------");
-  printstr("[real map info]");
+  printstr("[ map info]");
   std::map<int,int> first;
   std::cout << (first.empty() == 1? "first is empty": "first is not empty") << std::endl;
   std::cout << "first size is: " << first.size() << std::endl;
@@ -420,7 +420,7 @@ void map_size_test(){
 
 void map_element_test() {
   printstr("---------Test element-----------");
-  printstr("[real map info]");
+  printstr("[ map info]");
   std::map<char, std::string> first;
   first['a']= "hello";
   first['b']= "world";
@@ -430,14 +430,14 @@ void map_element_test() {
 
 void map_insert_test(){
   printstr("---------Test insert-----------");
-  printstr("[real map info]");
+  printstr("[ map info]");
   printstr("(1)insert value_type& val: ");
   std::map<char,int> first;
   first.insert(std::pair<char, int>('a', 100));
   first.insert(std::pair<char, int>('b', 200));
   first.insert(std::pair<char, int>('c', 300));
-  printrealmap_val("map first val is: ", first);
-  printrealmap_key("map first key is: ", first);
+  printmap_val("map first val is: ", first);
+  printmap_key("map first key is: ", first);
   std::map<char,int>::iterator it = first.begin();
   std::map<char, int>::iterator ite = first.end();
   for(; it != ite; ++it)
@@ -465,7 +465,7 @@ void map_insert_test(){
 void map_erase_test(){
   
   printstr("---------Test erase-----------");
-  printstr("[real map info]");
+  printstr("[ map info]");
   std::map<char,int> first;
   first.insert(std::pair<char, int>('a', 100));
   first.insert(std::pair<char, int>('b', 200));
@@ -473,49 +473,49 @@ void map_erase_test(){
   first.insert(std::pair<char, int>('d', 400));
   std::map<char,int>::iterator it = first.begin();
   std::map<char,int>::iterator ite = first.end();
-  printrealmap_val("map first val is: ", first);
-  printrealmap_key("map first key is: ", first);
+  printmap_val("map first val is: ", first);
+  printmap_key("map first key is: ", first);
   first.erase(it);
-  printrealmap_val("map first val is: ", first);
-  printrealmap_key("map first key is: ", first);
+  printmap_val("map first val is: ", first);
+  printmap_key("map first key is: ", first);
   first.erase('b');
-  printrealmap_val("map first val is: ", first);
-  printrealmap_key("map first key is: ", first);
+  printmap_val("map first val is: ", first);
+  printmap_key("map first key is: ", first);
   it = first.begin();
   ite = first.end();
   first.erase(it, ite);
-  printrealmap_val("map first val is: ", first);
-  printrealmap_key("map first key is: ", first);
+  printmap_val("map first val is: ", first);
+  printmap_key("map first key is: ", first);
   std::cout << std::endl;
 }
 
 void map_swap_clear_test(){
   printstr("---------Test  swap, clear-----------");
-  printstr("[real map info]");
+  printstr("[ map info]");
   std::map<char,int> first;
   first['a'] = 42;
   first['b'] = 0;
-  printrealmap("first is:", first);
+  printmap("first is:", first);
   std::map<char,int> second;
   second['1'] = 100;
   second['2'] = 200;
-  printrealmap("second is:", second);
+  printmap("second is:", second);
   first.swap(second);
   printstr("---aftre swap: ");
-  printrealmap("first is:", first);
-  printrealmap("second is:", second); 
+  printmap("first is:", first);
+  printmap("second is:", second); 
   printstr("---aftre clear: ");
   first.clear();
-  printrealmap("first is:", first);
+  printmap("first is:", first);
   second.clear();
-  printrealmap("second is:", second); 
+  printmap("second is:", second); 
   std::cout << std::endl;
 }
 
 void map_keyComp_valComp_test(){
   /*test key_comp*/
   printstr("---------Test  keyComp valComp-----------");
-  printstr("[real map info]");
+  printstr("[ map info]");
   std::map<char,int> first;
   std::map<char,int>::key_compare firstcomp = first.key_comp();
   first['a']=100;
@@ -543,12 +543,12 @@ void map_keyComp_valComp_test(){
 
 void	map_find_test() {
   printstr("---------Test find-----------");
-  printstr("[real map info]");
+  printstr("[ map info]");
   std::map<char, int> first;
   first['a'] = 100;
   first['b'] = 200;
   first['c'] = 300;
-  printrealmap("myfirst is:", first);
+  printmap("first is:", first);
   std::map<char, int>::iterator it;
   printstr("find 'a': ");
   it = first.find('a');
@@ -564,7 +564,7 @@ void	map_find_test() {
 
 void map_count_test() {
   printstr("---------Test count-----------");
-  printstr("[real map info]");
+  printstr("[ map info]");
   std::map<char, int> first;
   first['a'] = 100;
   first['b'] = 200;
@@ -576,7 +576,7 @@ void map_count_test() {
 
 void map_bound_test() {
   printstr("---------Test bound-----------");
-  printstr("[real map info]");
+  printstr("[ map info]");
   std::map<int, char> first;
   first[1] = 'a';
   first[2] = 'b';
@@ -595,7 +595,7 @@ void map_bound_test() {
 
 void map_equal_test() {
   printstr("---------Test equal_Range-----------");
-  printstr("[real map info]");
+  printstr("[ map info]");
   std::map<int, char> first;
   first[1] = 'a';
   first[2] = 'b';
@@ -610,7 +610,7 @@ void map_equal_test() {
   std::cout << ret.second->first << " => " << ret.second->second << std::endl << std::endl;
 }
 
-void real_map()
+void _map()
 {
   map_constructor_test();
   map_iterator_test();
@@ -629,65 +629,65 @@ void real_map()
 void stack_constructor_test(void){
   
     printstr("---------Test constructor-----------\n");
-    printstr("[real stack info]");
-    std::vector<int> realvec (2,200); 
-    std::stack<int, std::vector<int> > realstack (realvec);
-    std::cout << realstack.size() << std::endl;
+    printstr("[ stack info]");
+    std::vector<int> vec (2,200); 
+    std::stack<int, std::vector<int> > stack (vec);
+    std::cout << stack.size() << std::endl;
 
-    std::vector<char> realvecchar (3, 'a');
-    std::stack<char, std::vector<char> > realstackchar (realvecchar);
-    std::cout << realstackchar.size() << std::endl;
+    std::vector<char> vecchar (3, 'a');
+    std::stack<char, std::vector<char> > stackchar (vecchar);
+    std::cout << stackchar.size() << std::endl;
 
-    std::vector<std::string> realvecstr (4, "42");
-    std::stack<std::string, std::vector<std::string> > realstackstr (realvecstr);
-    std::cout << realstackstr.size() << std::endl << std::endl;
+    std::vector<std::string> vecstr (4, "42");
+    std::stack<std::string, std::vector<std::string> > stackstr (vecstr);
+    std::cout << stackstr.size() << std::endl << std::endl;
 }
 
 void stack_modifier_test() {
 
     printstr("---------Test empty push top pop-----------\n");
-    printstr("[real stack info]");
-    std::stack<int> realstack;
-    std::cout << "int: " << (realstack.empty() == true ? "realstack is empty" : "realstack is not empt" )<< std::endl;
+    printstr("[ stack info]");
+    std::stack<int> stack;
+    std::cout << "int: " << (stack.empty() == true ? "stack is empty" : "stack is not empt" )<< std::endl;
 
-    realstack.push(1);
-    std::cout << "int: " << (realstack.empty() == true ? "realstack is empty" : "realstack is not empt" )<< std::endl;
-    std::cout << "size is: " << realstack.size() << std::endl;
-    std::cout << "top element is: " << realstack.top() << std::endl;
+    stack.push(1);
+    std::cout << "int: " << (stack.empty() == true ? "stack is empty" : "stack is not empt" )<< std::endl;
+    std::cout << "size is: " << stack.size() << std::endl;
+    std::cout << "top element is: " << stack.top() << std::endl;
     
-    realstack.push(2);
-    std::cout << "size is: " << realstack.size() << std::endl;
-    std::cout << "top element is: " << realstack.top() << std::endl;
+    stack.push(2);
+    std::cout << "size is: " << stack.size() << std::endl;
+    std::cout << "top element is: " << stack.top() << std::endl;
 
-    realstack.pop();
-    realstack.pop();
-    std::cout << "int: " << (realstack.empty() == true ? "mystack is empty" : "mystack is not empt" )<< std::endl;
+    stack.pop();
+    stack.pop();
+    std::cout << "int: " << (stack.empty() == true ? "stack is empty" : "stack is not empt" )<< std::endl;
     std::cout << std::endl;
 }
 
 void stack_operators_test()
 {
     printstr("---------Test relational operators-----------\n");
-    printstr("[real stack info]");
-    std::stack<int, std::vector<int> > realstack1;
-    std::cout << "realstack1 size is: " << realstack1.size() << std::endl;
-    std::stack<int, std::vector<int> > realstack2;
-    std::cout << "realstack2 size is: " << realstack2.size() << std::endl;
-    if (realstack1 == realstack2) std::cout << "realstdack1 and realstack2 is same" << std::endl;
+    printstr("[ stack info]");
+    std::stack<int, std::vector<int> > stack1;
+    std::cout << "stack1 size is: " << stack1.size() << std::endl;
+    std::stack<int, std::vector<int> > stack2;
+    std::cout << "stack2 size is: " << stack2.size() << std::endl;
+    if (stack1 == stack2) std::cout << "stdack1 and stack2 is same" << std::endl;
     
-    std::vector<int> realvec (2,200);
-    std::stack<int, std::vector<int> >realstack3(realvec);
-    std::cout << "realstack1 size is: " << realstack1.size() << std::endl;
-    std::cout << "realstack3 size is: " << realstack3.size() << std::endl;
-    if (realstack1 != realstack3) std::cout << "realstdack1 and realstack3 is not same" << std::endl;
-    if (realstack1 < realstack3) std::cout << "realstdack1 is smaller then realstack3" << std::endl;
-    if (realstack1 > realstack3 == false) std::cout << "realstdack1 is smaller then realstack3" << std::endl;
-    if (realstack1 <= realstack3) std::cout << "realstdack1 is smaller or same then realstack3" << std::endl<< std::endl;
-    if (realstack1 >= realstack3) std::cout << "realstdack1 is bigger or same then realstack3" << std::endl; //not show
+    std::vector<int> vec (2,200);
+    std::stack<int, std::vector<int> >stack3(vec);
+    std::cout << "stack1 size is: " << stack1.size() << std::endl;
+    std::cout << "stack3 size is: " << stack3.size() << std::endl;
+    if (stack1 != stack3) std::cout << "stdack1 and stack3 is not same" << std::endl;
+    if (stack1 < stack3) std::cout << "stdack1 is smaller then stack3" << std::endl;
+    if (stack1 > stack3 == false) std::cout << "stdack1 is smaller then stack3" << std::endl;
+    if (stack1 <= stack3) std::cout << "stdack1 is smaller or same then stack3" << std::endl<< std::endl;
+    if (stack1 >= stack3) std::cout << "stdack1 is bigger or same then stack3" << std::endl; //not show
 }
 
 
-void real_stack()
+void _stack()
 {
     stack_constructor_test();
     stack_modifier_test();
@@ -696,8 +696,8 @@ void real_stack()
 
 int main()
 {
-  real_vector();
-  real_map();
-  real_stack();
+  _vector();
+  _map();
+  _stack();
   return (0);
 }

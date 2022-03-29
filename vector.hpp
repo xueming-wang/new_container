@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Vector.hpp                                         :+:      :+:    :+:   */
+/*   vector.hpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: xuwang <xuwang@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/04 16:23:01 by xuwang            #+#    #+#             */
-/*   Updated: 2022/03/23 18:02:54 by xuwang           ###   ########.fr       */
+/*   Updated: 2022/03/29 17:56:34 by xuwang           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -69,7 +69,7 @@ namespace ft
             // with each element constructed from its corresponding element in that range, in the same order.         
             template <class InputIterator>
             vector (InputIterator first, InputIterator last, const allocator_type& alloc = allocator_type(),
-            typename ft::enable_if<!ft::is_integral<InputIterator>::value, InputIterator>::type *p = NULL):
+            typename ft::enable_if<!ft::is_integral<InputIterator>::value, InputIterator>::type* = NULL):
                   _allocator(alloc){
                     size_type n = last - first;
                     _begin = _allocator.allocate(n);
@@ -100,7 +100,6 @@ namespace ft
             vector& operator= (const vector& x) {
                 if (this == &x)
                   return *this;
-                size_type n = size();
                 clear();
                 size_type _n = x.size();
                 if (_n > capacity())

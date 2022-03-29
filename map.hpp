@@ -77,12 +77,17 @@ namespace ft {
             /*constructor , destructor and operator*/
             /*empty container constructor (default constructor)*/
             explicit map (const key_compare& comp = key_compare(),
-              const allocator_type& alloc = allocator_type()) : _btree() {}   //malloc no key
+              const allocator_type& alloc = allocator_type()) : _btree() {
+                  (void)comp;
+                  (void)alloc;
+              }   //malloc no key
 
             /*range constructor Constructs a container with as many elements as the range [first,last),*/
             template <class InputIterator>
             map (InputIterator first, InputIterator last, const key_compare& comp = key_compare(),
                 const allocator_type& alloc = allocator_type()): _btree() {
+                (void)comp;
+                (void)alloc;
                 insert(first, last);
             }
             
