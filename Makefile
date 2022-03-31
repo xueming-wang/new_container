@@ -6,7 +6,7 @@
 #    By: xuwang <xuwang@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/03/29 18:10:07 by xuwang            #+#    #+#              #
-#    Updated: 2022/03/29 18:55:52 by xuwang           ###   ########.fr        #
+#    Updated: 2022/03/31 15:15:48 by xuwang           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -29,5 +29,6 @@ fclean:
 
 all: $(NAME)
 
+re: fclean all 
 
-.PHONY: all fclean
+.PHONY: all fclean re
