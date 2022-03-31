@@ -1,0 +1,287 @@
+---------Test constructor-----------
+
+[ vector info]
+0 0 0 0 
+42 42 42 42 
+42 42 42 42 
+42 42 42 42 
+0 -42 42 1 442 
+test opearator 
+first vector: 42 42 42 42 
+
+---------Test iterator-----------
+
+[ vector info]
+1 2 3 4 5 
+iterator begin(it) is: 1
+iterator end(ite) is: 5
+begin++(it++) is: 2
+end--(ite--) is: 4
+it + 1 is: 3
+ite - 1  is: 3
+const_iterator begin is: 1
+const_iterator end is: 5
+reverse_iterator rbegin is: 5
+reverse_iterator rend is: 1
+const_reverse_iterator rbegin is: 5
+const_rend is: 1
+
+---------Test size/max_size/empty/capatity-----------
+
+[ vector info]
+int: vec is empty
+int: vec is not empt
+size: 1
+max_size: 4611686018427387903
+capacity: 1
+
+char: vecchar is empty
+char: vechar is not empt
+a b 
+size: 2
+max_size: 9223372036854775807
+capacity: 2
+
+---------Test resize / reserve-----------
+
+[ vector info]
+42 
+42 1 1 1 
+42 1 
+42 1 10 10 
+size: 4
+max_size: 4611686018427387903
+capacity: 4
+
+---------Test Element acces(at , [], front. back-----------
+
+[ vector info]
+1 2 3 4 5 6 7 8 9 10 
+at(0) is: 1
+operator[9] is: 10
+operator[10] is: 678651235
+front is: 1
+back is: 10
+
+---------Test  assign-----------
+
+[ vector info]
+100 100 100 100 100 100 100 
+100 100 100 100 100 
+1776 7 4 
+Size of first: 7
+Size of second: 5
+Size of third: 3
+
+---------Test  insert-----------
+
+[ vector info]
+100 100 100 
+200 100 100 100 
+300 300 200 100 100 100 
+300 300 400 400 200 100 100 100 
+501 502 503 300 300 400 400 200 100 100 100 
+
+---------Test  push_back / pop_back -----------
+
+[ vector info]
+hello 42 
+hello 
+
+---------Test erase-----------
+
+[ vector info]
+1 2 3 4 5 6 7 8 9 10 
+1 2 3 4 5 7 8 9 10 
+4 5 7 8 9 10 
+
+---------Test swap / clear-----------
+
+[ vector info]
+foo contains:200 200 200 200 200 
+bar contains:100 100 100 
+size: 0
+max_size: 4611686018427387903
+capacity: 0
+
+---------Test overloads-----------
+
+[ vector info]
+foo vec is: 100 100 100 
+bar vec is: 200 200 200 200 200 
+foo and bar is not same
+foo is smaller then bar
+foo vec is: 200 200 200 200 200 
+foo and bar is same
+foo is biger or same then bar
+foo is smaller or same then bar
+
+---------Test constructor, destructor, operaror= ----------
+[ info]
+map first val is: 
+map first key is: 
+map first val is: 42 -42 
+map first key is: a b 
+map second val is: 42 -42 
+map second key is: a b 
+map third val is: 42 -42 
+map third key is: a b 
+map first val is: 42 -42 0 
+map first key is: a b c 
+
+---------Test  iterator ----------
+[ map info]
+1 => 0
+2 => 42
+3 => -42
+1 => 0
+2 => 42
+3 => -42
+
+3 => -42
+2 => 42
+1 => 0
+3 => -42
+2 => 42
+1 => 0
+
+---------Test size /empty-----------
+[ map info]
+first is empty
+first size is: 0
+first is not empty
+first size is: 1
+second is empty
+second size is: 0
+second is not empty
+second size is: 1
+
+---------Test element-----------
+[ map info]
+first['a'] is : hello
+first['b'] is : world
+
+---------Test insert-----------
+[ map info]
+(1)insert value_type& val: 
+map first val is: 100 200 300 
+map first key is: a b c 
+a => 100
+b => 200
+c => 300
+(2)insert one iterator
+a => 100
+b => 200
+(3)insert same key: 
+element 'a' already existed with a value of 100
+a => 100
+b => 200
+c => 300
+
+---------Test erase-----------
+[ map info]
+map first val is: 100 200 300 400 
+map first key is: a b c d 
+map first val is: 200 300 400 
+map first key is: b c d 
+map first val is: 300 400 
+map first key is: c d 
+map first val is: 
+map first key is: 
+
+---------Test  swap, clear-----------
+[ map info]
+first is:
+a => 42
+b => 0
+second is:
+1 => 100
+2 => 200
+---aftre swap: 
+first is:
+1 => 100
+2 => 200
+second is:
+a => 42
+b => 0
+---aftre clear: 
+first is:
+second is:
+
+---------Test  keyComp valComp-----------
+[ map info]
+first contains:
+a => 100
+b => 200
+c => 300
+second contains:
+x => 1001
+y => 2002
+z => 3003
+
+---------Test find-----------
+[ map info]
+first is:
+a => 100
+b => 200
+c => 300
+find 'a': 
+a => 100
+find 'b': 
+b => 200
+find const 'c': 
+c => 300
+
+---------Test count-----------
+[ map info]
+'b' is exist
+'e' is not exist
+
+---------Test bound-----------
+[ map info]
+to find node >= 1
+1 => a
+to find node > 1
+2 => b
+to find node > 2
+3 => c
+
+---------Test equal_Range-----------
+[ map info]
+1 => a
+2 => b
+
+2 => b
+3 => c
+
+---------Test constructor-----------
+
+[ stack info]
+2
+3
+4
+
+---------Test empty push top pop-----------
+
+[ stack info]
+int: stack is empty
+int: stack is not empt
+size is: 1
+top element is: 1
+size is: 2
+top element is: 2
+int: stack is empty
+
+---------Test relational operators-----------
+
+[ stack info]
+stack1 size is: 0
+stack2 size is: 0
+stdack1 and stack2 is same
+stack1 size is: 0
+stack3 size is: 2
+stdack1 and stack3 is not same
+stdack1 is smaller then stack3
+stdack1 is smaller then stack3
+stdack1 is smaller or same then stack3
+

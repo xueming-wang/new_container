@@ -96,7 +96,10 @@ namespace ft {
                 insert (x.begin(), x.end());
             }
 
-            ~map(){}
+            ~map(){
+                clear();
+                _btree.destory_null();
+            }
 
              map& operator= (const map& x){
                 if (this == &x)

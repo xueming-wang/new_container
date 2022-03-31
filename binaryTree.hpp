@@ -6,7 +6,7 @@
 /*   By: xuwang <xuwang@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/19 18:47:49 by xuwang            #+#    #+#             */
-/*   Updated: 2022/02/16 14:52:28 by xuwang           ###   ########.fr       */
+/*   Updated: 2022/03/31 14:21:35 by xuwang           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -231,6 +231,11 @@ namespace ft {
             void destory_tree() {
                 destory_tree(this->_root);
                 this->_root = _null;
+            }
+            void destory_null()
+            {
+                allocator_type().destroy(_null);
+                allocator_type().deallocate(_null, 1);
             }
             void destory_tree(pointer node){
                 if (node == _null)
