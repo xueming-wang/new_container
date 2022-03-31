@@ -681,7 +681,7 @@ void stack_operators_test()
     std::cout << "stack3 size is: " << stack3.size() << std::endl;
     if (stack1 != stack3) std::cout << "stdack1 and stack3 is not same" << std::endl;
     if (stack1 < stack3) std::cout << "stdack1 is smaller then stack3" << std::endl;
-    if (stack1 > stack3 == false) std::cout << "stdack1 is smaller then stack3" << std::endl;
+    if (!(stack1 > stack3)) std::cout << "stdack1 is smaller then stack3" << std::endl;
     if (stack1 <= stack3) std::cout << "stdack1 is smaller or same then stack3" << std::endl<< std::endl;
     if (stack1 >= stack3) std::cout << "stdack1 is bigger or same then stack3" << std::endl; //not show
 }

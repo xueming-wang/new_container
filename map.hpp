@@ -190,6 +190,7 @@ namespace ft {
 
             void erase (iterator first, iterator last) {
                 while (first != last){
+                    first = find(first->first);
                     erase(first++);
                 }
             }

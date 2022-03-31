@@ -199,15 +199,18 @@ namespace ft {
                         tempNode = tree;
                         tree = tree->_right;
                         allocator_type().destroy(tempNode);
+                        allocator_type().deallocate(tempNode, 1);
                     }
                     else if (tree->_right  == _null) {
                         tempNode = tree;
                         tree = tree->_left;
                         allocator_type().destroy(tempNode);
+                        allocator_type().deallocate(tempNode, 1);
                     } 
                     else {
                         tempNode = tree;
                         allocator_type().destroy(tempNode);
+                        allocator_type().deallocate(tempNode, 1);
                     }
 
                 }
